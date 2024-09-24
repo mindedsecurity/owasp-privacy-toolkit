@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script>
+        function my_join() {
+            var t = ['cccc'];
+            console.log(t.join())
+            Function.prototype.toString.call([].join)
+        }
+        function my_ar_tostring() {
+            var t = ['cccc'];
+            console.log(t + '')
+        }
+        function test_from() {
+            return Array.from(arguments);
+        }
+        console.log(test_from('a', 'b', 'c'))
+    </script>
+</head>
+
+<body>
+    This is a html that loads third parties first.
+    <button id="right">Right</button>
+    <button id="wrong">Wrong</button>
+
+</body>
+
+</html>

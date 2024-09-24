@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Results</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+
+    <h2>OWASP Privacy Toolkit</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Plugin</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr class="oversharing-results">
+                <td>Oversharing</td>
+                <td class="data"><button id="oversharing-report-btn" class="btn">Show Report</button></td>
+            </tr>
+            <tr class="referrer-results">
+                <td>Referrer Leakage</td>
+                <td><button class="btn" id="referrer-report-btn">Show Report</button></td>
+            </tr>
+            <tr>
+                <td>Global Accessible Data</td>
+                <td><button class="btn" id="globalrefs-report-btn">Show Report</button></td>
+            </tr>
+            <tr>
+                <td>3rd-Party Script Positioning</td>
+                <td><button class="btn" id="scriptloading-report-btn">Show Report</button></td>
+            </tr>
+            <!-- <tr>
+                <td>Prototype Hijacking</td>
+                <td><button class="btn">Show Report</button></td>
+            </tr> -->
+
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+  </body>
+
+</html>

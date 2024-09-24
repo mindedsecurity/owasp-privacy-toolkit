@@ -1,0 +1,66 @@
+{
+  "name": "OWASP Privacy Toolkit",
+  "version": "1.0",
+  "description": "OWASP Privacy Toolkit. Measures the privacy best practices of pages during navigation.",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "injected/messages.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "run_at": "document_start",
+      "world": "ISOLATED"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "injected/oversharing.js",
+        "injected/tags_analysis.js",
+        "injected/global_refs.js",
+        "injected/prototypes.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "background": {
+    "service_worker": "bg_files/background.js"
+  },
+  "action": {
+    "default_title": "OWASP Privacy Toolkit Results",
+    "default_popup": "popups/popup.html",
+    "default_icon": {
+      "64": "icons/opt_64.png",
+      "128": "icons/opt_128.png",
+      "512": "icons/opt_512.png"
+    }
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "webNavigation",
+    "storage",
+    "webRequest"
+  ],
+  "icons": {
+    "32": "icons/opt_64.png",
+    "72": "icons/opt_64.png",
+    "128": "icons/opt_128.png",
+    "512": "icons/opt_512.png"
+  }
+}

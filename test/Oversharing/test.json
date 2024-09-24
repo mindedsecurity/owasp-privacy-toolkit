@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "name": "Bram Stoker",
+    "username": "Dracula",
+    "email": "xxxxxx@test.com",
+    "address": {
+        "street": "Test Light",
+        "suite": "Apt. 123",
+        "city": "Berlin",
+        "zipcode": "12345-1234",
+        "geo": {
+            "lat": "-37.1234",
+            "lng": "81.1111"
+        }
+    },
+    "phone": "1-123-123-1234 x56442",
+    "website": "test.org",
+    "company": {
+        "name": "Test-Name",
+        "catchPhrase": "Some very complex task",
+        "bs": "Very specific market section"
+    }
+}

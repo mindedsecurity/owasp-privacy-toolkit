@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>OWASP Privacy Toolkit - Test</title>
+  </head>
+  <body>
+    <h1>Test page</h1>
+    <p>This is an example test page containing sample data for the <b>Globally Accessible Data</b> plugin.</p>
+  </body>
+
+  <script>
+
+    window.testEmail1 = "test@email.com";
+
+    console.log("hello world!");
+
+    window.wrappedStruct = {
+        x:{
+            a: ["innertest@email.com"]
+        },
+        y: {
+          pan: "6541123456781234"
+        },
+        z: {
+          ph: "+393331122334"
+        }
+    }
+
+  </script>
+</html>

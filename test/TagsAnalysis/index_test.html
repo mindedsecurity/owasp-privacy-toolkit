@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <script src="./test.js?vv"></script>
+  <script src="./test_done_right.js?vv"></script>
+  
+  <script type="module">
+    function addTagScript(url, text, tohead /*bool*/){
+      var el = document.createElement("script");
+      if(url){
+        el.src = url
+      }else{
+        el.textContent = text
+      }
+      if(tohead)
+      document.head.appendChild(el);
+    else
+    document.body.appendChild(el);
+}
+console.log("INLINE DEFERRED as Module")
+</script>
+<script src="http://at.tack.er:3000/external.js?ssss22" defer></script>
+<script >
+  console.log('inliune non deferrer')
+  </script>
+</head>
+
+<body>
+  <script src="amodule.js?ssss22" type="module"></script>
+  This is a html that loads third parties first.
+      <button id="right">Right</button>
+      <button id="wrong">Wrong</button>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+
+<body>
+    <head>
+        <title>OWASP Privacy Toolkit - Test</title>
+      </head>
+      <body>
+        <h1>Test page</h1>
+        <p>This is an example test page containing sample data for the <b>Oversharing</b> plugin.</p>
+      </body>
+    <script>
+        function test_xhr_1() {
+            var c = new XMLHttpRequest;
+            c.open("GET", "test.json");
+            c.onreadystatechange = function () {
+                if (c.readyState == XMLHttpRequest.DONE)
+                    console.log(JSON.parse(c.responseText));
+            }
+            c.setRequestHeader("Content-Type", "application/json");
+            c.send("XC")
+        }
+        //test_xhr_1();
+        function testxhr_2(url, ispost, timeout) {
+            var e = url;
+            var o = ispost;
+            var s = timeout;
+            var r = new XMLHttpRequest;
+            r.withCredentials = true,
+                r.addEventListener("load", function () {
+                    if (r.readyState == XMLHttpRequest.DONE)
+                        if (200 <= r.status && r.status < 300) {
+                            var e = r.response;
+                            if ("string" == typeof e)
+                                try {
+                                    e = JSON.parse(e)
+                                } catch (e) { }
+                            console.log(e)
+                        } else
+                            new Error("HTTP Status: " + r.status + " response type: " + r.responseType)
+                }),
+                r.addEventListener("error", function () {
+                    (new Error("error"))
+                }),
+                r.addEventListener("abort", function () {
+                    (new Error("aborted"))
+                }),
+                null === o ? r.open("GET", e, !0) : r.open("POST", e, !0),
+                r.responseType = "json",
+                r.timeout = s,
+                r.ontimeout = function () {
+                    (new Error("Timeout " + s + "ms " + e))
+                }
+                ,
+                r.send(o)
+
+        }
+
+        testxhr_2("test.json", null, 5000);
+    </script>
+</body>
+
+</html>

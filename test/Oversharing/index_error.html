@@ -1,0 +1,22 @@
+<!-- test that triggers Response.json() issues when response is not actually a JSON . -->
+
+<script>
+
+const myList = document.querySelector("ul");
+const myRequest = new Request("no_json.json");
+
+fetch(myRequest)
+  .then((response) => response.json())
+  .then((data) => {
+    for (const product of data.products) {
+      const listItem = document.createElement("li");
+      listItem.appendChild(document.createElement("strong")).textContent =
+        product.Name;
+      listItem.append(` can be found in ${product.Location}. Cost: `);
+      listItem.appendChild(document.createElement("strong")).textContent =
+        `£${product.Price}`;
+      myList.appendChild(listItem);
+    }
+  })
+  .catch(console.error);
+</script>
